@@ -1,9 +1,11 @@
+import com.sun.tools.classfile.Annotation.element_value;
+
 class Car
 {
     Integer id;
     String license;
     Account driver;
-    Integer passegenger;
+    private Integer passegenger;
 
     public Car(String pLicense, Account pDriver){
         this.license = pLicense;
@@ -11,8 +13,20 @@ class Car
     }
 
     void printDataCar(){
-        System.out.println("License:" + license + " Name Driver: " + driver.name);
+        if(passegenger!=null)
+            System.out.println("License:" + license + " Name Driver: " + driver.name + " Passengers: " + passegenger);
 
+    }
+
+    public Integer getPassenger(){
+        return passegenger;
+    }
+
+    public void setPassenger(Integer pPassenger){
+        if(pPassenger==4)
+        this.passegenger = pPassenger;
+        else
+        System.out.println("Pasasegos no válidos.");
     }
 
 }
