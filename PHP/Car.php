@@ -1,4 +1,5 @@
-<?
+<?php
+require_once 'Account.php';
 class Car{
     public $id;
     public $license;
@@ -11,7 +12,8 @@ class Car{
     }
 
     public function printDataCarAsString(){
-        return "License: " . $license . " Name driver: " . $driver;
+        //return "License: " . $license . " Name driver: " . $driver;
+        echo "Licencia: $this->license Driver: " . $this->driver->name;
     }
 
 }
